@@ -35,7 +35,7 @@ public class InventoryController {
 		return invetoryServiceImpl.updateProduct(productUpdateRequest);
 	}
 	
-	@PostMapping("/get/{productId}")
+	@GetMapping("/get/{productId}")
 	public ResponseEntity<ProductResponse>getProductById(@PathVariable Long productId){
 		return invetoryServiceImpl.getProductById(productId);
 	}
