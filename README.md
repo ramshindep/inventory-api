@@ -31,8 +31,8 @@ cd <your-project-folder>
 ## 2. Setting Up and Running Locally
 
 ### Configure the Database
-1. Create a MySQL database, e.g., `inventory_db`.
-2. Update `application.properties` with your database credentials:
+1. Create a MySQL database, e.g. inventory_db.
+2. Update application.properties with your database credentials
 
 ## Build and Run the Application
 
@@ -43,10 +43,13 @@ mvn spring-boot:run
 
 ## Test the Api
 
-POST	/api/inventory/addProduct	Add a new product
-POST	/api/inventory/increaseStock?productId=1&amount=5	Increase stock
-POST	/api/inventory/decreaseStock?productId=1&amount=2	Decrease stock
-GET	/api/inventory/getLowStockProducts	Retrieve low-stock products
+POST /api/inventory/add  ->	Add a new product
+POST  /api/inventory/update => update a existing product
+GET  /api/inventory/get/{productId}=>get a product
+DELETE /api/inventory/delete/{productId} => delete a product
+POST/api/inventory/increaseStock?productId=1&amount=5	 =>Increase stock
+POST/api/inventory/decreaseStock?productId=1&amount=2	=>Decrease stock
+GET/api/inventory/getLowStockProducts  	=>Retrieve low-stock products
 
 ## Run Test cases
 
@@ -54,9 +57,9 @@ mvn Test
 
 ## Assumption and Design Choices
 
-- Unique Products: Product names are unique; duplicates are not allowed.
+- Unique Products: Product names are unique, duplicates are not allowed.
 
-- Stock Validation: Stock cannot be negative; decreasing stock below zero returns an error.
+- Stock Validation: Stock cannot be negative, decreasing stock below zero returns an error.
 
 - Consistent Responses: Each API returns a response wrapper containing:
 
